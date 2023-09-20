@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,5 +8,6 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {;
-  constructor(public dataService: DataService) {}
+  constructor(public dataService: DataService,
+    public auth: AuthService) {}
 }
