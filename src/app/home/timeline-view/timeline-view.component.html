@@ -1,1 +1,9 @@
-<p>timeline-view works!</p>
+<button routerLink="timelines" class="link-button">
+    Back to timelines
+</button>
+<div *ngFor="let event of timelineEvents" class="list-item-card">
+    <p class="name">{{ event.title }}</p>
+    <p class="description">{{ event.description }}</p>
+    <p>Created On: {{ event.timestamp | date:'dd/MM/yyyy HH:mm' }}</p>
+    <p>Created By: {{ event.createdBy }}</p>
+</div>

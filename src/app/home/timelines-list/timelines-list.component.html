@@ -1,6 +1,6 @@
-<div *ngFor="let timeline of timelinesList" class="timeline-card">
-    <p class="timeline-name">{{ timeline.title }}</p>
-    <p class="timeline-description">{{ timeline.description }}</p>
+<div *ngFor="let timeline of timelinesList" class="list-item-card timeline" (click)="openTimeline(timeline.id)">
+    <p class="name">{{ timeline.title }}</p>
+    <p class="description">{{ timeline.description }}</p>
     <p>Modified On: {{ timeline.modifiedOn | date:'dd/MM/yyyy HH:mm' }}</p>
     <p>Created On: {{ timeline.createdOn | date:'dd/MM/yyyy HH:mm' }}</p>
     <p>Created By: {{ timeline.createdBy }}</p>

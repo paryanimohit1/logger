@@ -19,5 +19,4 @@ export class TimelineViewComponent {
     this.dataService.setTitleInHeader(CONSTANTS.HEADER.TIMELINE_VIEW);
     this.timelineEvents = this.dataService.getTimelineEventsList(this.route.snapshot.params['id']);
   }
-
 }
