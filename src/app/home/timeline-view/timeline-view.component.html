@@ -1,5 +1,5 @@
 <button routerLink="timelines" class="link-button">
-    Back to timelines
+    <span class="fa fa-arrow-left mr-1"></span> Back to timelines
 </button>
 <div *ngFor="let event of timelineEvents" class="list-item-card">
     <p class="name">{{ event.title }}</p>

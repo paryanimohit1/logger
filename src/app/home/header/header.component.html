@@ -1,2 +1,2 @@
 <p>{{ dataService.headerTitle | async }}</p>
-<button *ngIf="auth.isLoggedIn" (click)="auth.logout()">Logout</button>
+<button *ngIf="auth.isLoggedIn" class="button danger-hover" (click)="auth.logout()">Logout</button>
