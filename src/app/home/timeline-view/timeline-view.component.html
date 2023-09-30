@@ -2,8 +2,8 @@
     <span class="fa fa-arrow-left mr-1"></span> Back to timelines
 </button>
 <div *ngFor="let event of timelineEvents" class="list-item-card">
-    <p class="name">{{ event.title }}</p>
-    <p class="description">{{ event.description }}</p>
-    <p>Created On: {{ event.timestamp | date:'dd/MM/yyyy HH:mm' }}</p>
-    <p>Created By: {{ event.createdBy }}</p>
+    <p class="name text-base fw-500">{{ event.title }}</p>
+    <p class="description text-sm">{{ event.description }}</p>
+    <p class="text-sm">Created On: {{ event.timestamp | date:'dd/MM/yyyy HH:mm' }}</p>
+    <p class="text-sm">Created By: {{ event.createdBy }}</p>
 </div>

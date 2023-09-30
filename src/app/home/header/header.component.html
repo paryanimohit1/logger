@@ -1,2 +1,3 @@
-<p>{{ dataService.headerTitle | async }}</p>
+<!-- Add back button with animations -->
+<p class="heading text-xl">{{ dataService.headerTitle | async }}</p>
 <button *ngIf="auth.isLoggedIn" class="button danger-hover" (click)="auth.logout()">Logout</button>

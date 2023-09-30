@@ -1,8 +1,17 @@
+@import 'genericLayout';
+@import 'variables';
+
 /* You can add global styles to this file, and also import other style files */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif;
+    @extend .fw-700,
 }
 
 .list-item-card {
@@ -11,15 +20,18 @@
     grid-template-rows: repeat(2, 1fr);
     row-gap: 5px;
     padding: 10px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid $gray-1;
     border-radius: 4px;
     margin-bottom: 10px;
+    transition: 0.3s ease;
 
     &.timeline {
         grid-template-rows: repeat(3, 1fr);
+
         &:hover {
+            scale: 1.005;
             cursor: pointer;
-            box-shadow: 0 0 10px -5px #6e6e6e;
+            box-shadow: 0 0 7px -5px $gray-2;
         }
     }
 
@@ -38,13 +50,27 @@
     background: none;
     outline: none;
     border: none;
-    font-weight: bold;
-    color: #0d94ee;
-    margin-block: 10px;
+    color: $primary;
+    margin-bottom: 10px;
     cursor: pointer;
     justify-content: center;
     display: flex;
     align-items: center;
+    /* Transition for text color on hover */
+    transition: color 0.3s ease;
+    @extend .text-sm;
+
+    &:hover {
+        /* Hover background color */
+        color: $primary-hover;
+    }
+
+    &:focus {
+        /* Remove outline on focus for accessibility */
+        outline: none;
+        /* Remove outline on focus for accessibility */
+        text-decoration: none;
+    }
 }
 
 /* Basic Button Styling */
@@ -52,60 +78,62 @@
     display: inline-block;
     padding: 12px 24px;
     font-size: 16px;
-    font-weight: bold;
     text-align: center;
     text-decoration: none;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.button:hover {
-    background-color: #2980b9;
-    color: #fff;
-}
 
-.button.primary {
-    background-color: #3498db;
-    color: #fff;
-}
+    &:hover {
+        background-color: $primary-hover;
+        color: $white;
+    }
 
-.button.primary:hover {
-    background-color: #2980b9;
-}
+    &.primary {
+        background-color: $primary;
+        color: $white;
+    }
 
-.button.success {
-    background-color: #2ecc71;
-    color: #fff;
-}
+    &.primary:hover {
+        background-color: $primary-hover;
+    }
 
-.button.success:hover {
-    background-color: #27ae60;
-}
+    &.success {
+        background-color: $success;
+        color: $white;
+    }
 
-.button.danger {
-    background-color: #e74c3c;
-    color: #fff;
-}
+    &.success:hover {
+        background-color: $success-hover;
+    }
 
-.button.danger:hover {
-    background-color: #c0392b;
-}
+    &.danger {
+        background-color: $danger;
+        color: $white;
+    }
 
-.button.disabled {
-    background-color: #ccc;
-    color: #666;
-    pointer-events: none;
-}
+    &.danger:hover {
+        background-color: $danger-hover;
+    }
 
-button.danger-hover:hover {
-    background-color: #c0392b; /* Hover background color for danger button */
-}
+    &.disabled {
+        background-color: #ccc;
+        color: #666;
+        pointer-events: none;
+    }
 
-/* Animation for button when active */
-.button:active {
-    transform: scale(0.95); /* Increase size by 10% */
-    transition: transform 0.3s ease; /* Add a smooth transition */
+    &.danger-hover:hover {
+        /* Hover background color for danger button */
+        background-color: $danger-hover;
+    }
+
+    /* Animation for button when active */
+    &:active {
+        /* Increase size by 10% */
+        transform: scale(0.95);
+        /* Add a smooth transition */
+        transition: transform 0.3s ease;
+    }
 }
-  
